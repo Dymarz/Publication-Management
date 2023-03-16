@@ -16,7 +16,7 @@
         </ng-container>
 
         <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Description/th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
             <td mat-cell *matCellDef="let element">{{ element.description }}</td>
         </ng-container>
 
@@ -26,8 +26,13 @@
         </ng-container>
 
         <ng-container matColumnDef="createdFrom">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Vorname</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Created From</th>
             <td mat-cell *matCellDef="let element">{{ element.author }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let element">{{ element.status }}</td>
         </ng-container>
 
         <ng-container matColumnDef="createdAt">

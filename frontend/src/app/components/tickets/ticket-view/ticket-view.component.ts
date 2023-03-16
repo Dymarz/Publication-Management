@@ -1,7 +1,7 @@
 // Author: Kevin Jahrens
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { map, Observable, startWith } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Snackbar } from 'src/app/helpers/snackbar';
 import { Ticket } from 'src/app/models/ticket';
 @Component({
@@ -23,11 +23,7 @@ export class TicketViewComponent implements OnInit {
     create?: (ticket: Ticket) => Observable<Ticket>;
 
     formGroup = new FormGroup({
-        dateOfTicket: new FormControl<Date>(new Date()),
-        dateOfReturn: new FormControl<Date | undefined>({ value: undefined, disabled: true }),
-        latestReturnDate: new FormControl<Date | undefined>({ value: undefined, disabled: true }),
-   
-        extensions: new FormControl<number>({ value: 0, disabled: true }),
+    
     });
 
 
@@ -36,14 +32,11 @@ export class TicketViewComponent implements OnInit {
     ngOnInit(): void {
         if (this.ticket) {
             this.formGroup.disable();
-            this.formGroup.patchValue(this.ticket);
         }
-
     }
 
     onSubmit(): void {
         if (!this.formGroup.valid) return;
-
 
         this.create!(this.formGroup.value).subscribe((a) => {
             this.formGroup.patchValue(a);
@@ -54,9 +47,6 @@ export class TicketViewComponent implements OnInit {
     }
 
    
-
-    
-
     onExtend(): void {
         if (!this.ticket?.uuid) return;
 
@@ -79,10 +69,5 @@ export class TicketViewComponent implements OnInit {
             this.ticket = a;
             this.snackBar.open('Buch zurückgegeben!');
         });
-    }
-
-    
-
-
-    
+    } 
 }

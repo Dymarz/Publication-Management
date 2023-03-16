@@ -25,15 +25,12 @@ export class TicketListComponent extends TableInitsComponent<Ticket> implements 
     updateData?: Observable<Observable<Ticket[]>>;
 
     displayedColumns: string[] = [
-        'publicationKey',
-        'publicationTitle',
-        'surname',
-        'name',
-        'studentNumber',
-        'dateOfTicket',
-        'dateOfReturn',
-        'latestReturnDate',
-        'extensions',
+        'subject',
+        'description',
+        'linkedTickets',
+        'createdFrom',
+        'createdAt',
+        'status'
     ];
 
     selectedTicket?: Ticket;

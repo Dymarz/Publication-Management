@@ -19,8 +19,6 @@
             <mat-datepicker #pickerDateOfTicket></mat-datepicker>
         </mat-form-field>
 
-       
-
         <mat-form-field appearance="fill">
             <mat-label>Rückgabedatum</mat-label>
             <input
@@ -58,7 +56,6 @@
                 *ngIf="this.formGroup.disabled && ticket"
                 type="button"
                 (click)="onExtend()"
-                [disabled]="this.formGroup.value.dateOfReturn || this.formGroup.value.extensions! >= 2"
                 mat-mini-fab
                 color="primary"
                 matTooltip="Verlängern"
@@ -70,7 +67,6 @@
                 *ngIf="this.formGroup.disabled"
                 type="button"
                 (click)="onReturn()"
-                [disabled]="this.formGroup.value.dateOfReturn || this.ticket?.publicationLoss"
                 mat-mini-fab
                 color="warn"
                 matTooltip="Zurückgeben"

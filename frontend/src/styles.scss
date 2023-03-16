@@ -7,29 +7,6 @@ body {
     margin: 0;
 }
 
-app-publications {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-}
-
-app-publication-list {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-}
-
-app-publication-view {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-}
-
 app-tickets {
     width: 100%;
     height: 90%;
@@ -51,58 +28,4 @@ app-ticket-view {
     overflow: auto;
     display: flex;
     justify-content: center;
-}
-
-app-overdue-notice {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-}
-
-app-overdue-notice-list {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-}
-
-app-basedata {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-}
-
-app-basedata-kinds {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-app-basedata-borrowers {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-app-basedata-authors {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-app-basedata-keywords {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }

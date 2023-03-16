@@ -25,17 +25,7 @@
         >
             <mat-icon>arrow_back</mat-icon>
         </button>
-        <div class="crud-container" *ngIf="!isViewOpen">
-            <button
-                matTooltip="Zurückgeben"
-                *ngIf="!isViewOpen"
-                [disabled]="!currentRecord || currentRecord.dateOfReturn || currentRecord.publicationLoss"
-                (click)="onReturn(currentRecord?.uuid)"
-                mat-mini-fab
-                color="warn"
-            >
-                <mat-icon>ticket_return</mat-icon>
-            </button>
+        <div class="crud-container" *ngIf="!isViewOpen">          
             <button
                 matTooltip="Details"
                 [disabled]="!currentRecord"
@@ -61,7 +51,5 @@
         *ngIf="isViewOpen"
         [create]="createTicket"
         [ticket]="currentRecord"
-        [extend]="extend"
-        [returnTicket]="returnTicket"
     ></app-ticket-view>
 </div>
