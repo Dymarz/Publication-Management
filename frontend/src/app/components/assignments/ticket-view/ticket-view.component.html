@@ -1,70 +1,25 @@
 <!-- Author: Kevin Jahrens -->
 <div class="container">
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-            <mat-label>Publikationsschlüssel</mat-label>
-            <input
-                placeholder="Bsp. NA-123"
-                type="text"
-                name="publication"
-                matInput
-                formControlName="publication"
-                [matAutocomplete]="autocompletepublication"
-                required
-            />
-            <mat-autocomplete
-                #autocompletepublication="matAutocomplete"
-                [displayWith]="displayPublication"
-            >
-                <mat-option
-                    *ngFor="let publication of filteredPublication | async"
-                    [value]="publication"
-                >
-                    {{ publication.key }}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
-
+       
         <mat-form-field appearance="fill">
             <mat-label>Ausleihdatum</mat-label>
             <input
                 placeholder="Bsp. 1.8.2008"
                 matInput
-                name="dateOfAssignment"
-                formControlName="dateOfAssignment"
-                [matDatepicker]="pickerDateOfAssignment"
+                name="dateOfTicket"
+                formControlName="dateOfTicket"
+                [matDatepicker]="pickerDateOfTicket"
             />
             <mat-datepicker-toggle
                 matSuffix
-                [for]="pickerDateOfAssignment"
+                [for]="pickerDateOfTicket"
                 [disabled]="this.formGroup.disabled"
             ></mat-datepicker-toggle>
-            <mat-datepicker #pickerDateOfAssignment></mat-datepicker>
+            <mat-datepicker #pickerDateOfTicket></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Ausleiher</mat-label>
-            <input
-                placeholder="Bsp. Mustermann Max"
-                type="text"
-                name="borrower"
-                matInput
-                formControlName="borrower"
-                [matAutocomplete]="autocompleteBorrower"
-                required
-            />
-            <mat-autocomplete
-                #autocompleteBorrower="matAutocomplete"
-                [displayWith]="displayBorrower"
-            >
-                <mat-option
-                    *ngFor="let borrower of filteredBorrowers | async"
-                    [value]="borrower"
-                >
-                    {{ borrower.surname }} {{ borrower.name }}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
+       
 
         <mat-form-field appearance="fill">
             <mat-label>Rückgabedatum</mat-label>
@@ -100,7 +55,7 @@
 
         <div class="button-container">
             <button
-                *ngIf="this.formGroup.disabled && assignment"
+                *ngIf="this.formGroup.disabled && ticket"
                 type="button"
                 (click)="onExtend()"
                 [disabled]="this.formGroup.value.dateOfReturn || this.formGroup.value.extensions! >= 2"
@@ -115,12 +70,12 @@
                 *ngIf="this.formGroup.disabled"
                 type="button"
                 (click)="onReturn()"
-                [disabled]="this.formGroup.value.dateOfReturn || this.assignment?.publicationLoss"
+                [disabled]="this.formGroup.value.dateOfReturn || this.ticket?.publicationLoss"
                 mat-mini-fab
                 color="warn"
                 matTooltip="Zurückgeben"
             >
-                <mat-icon>assignment_return</mat-icon>
+                <mat-icon>ticket_return</mat-icon>
             </button>
 
             <button

@@ -7,13 +7,13 @@
         </mat-slide-toggle>
     </div>
 
-    <app-assignment-list
+    <app-ticket-list
         *ngIf="!isViewOpen"
-        [assignments]="data"
+        [tickets]="data"
         [updateDataOnReturn]="onReturnSubject.asObservable()"
         [updateData]="onUpdateListSubject.asObservable()"
-        (showAssignment)="onSelect($event)"
-    ></app-assignment-list>
+        (showTicket)="onSelect($event)"
+    ></app-ticket-list>
 
     <div class="button-container">
         <button
@@ -34,7 +34,7 @@
                 mat-mini-fab
                 color="warn"
             >
-                <mat-icon>assignment_return</mat-icon>
+                <mat-icon>ticket_return</mat-icon>
             </button>
             <button
                 matTooltip="Details"
@@ -57,13 +57,11 @@
         </div>
     </div>
 
-    <app-assignment-view
+    <app-ticket-view
         *ngIf="isViewOpen"
-        [create]="createAssignment"
-        [assignment]="currentRecord"
+        [create]="createTicket"
+        [ticket]="currentRecord"
         [extend]="extend"
-        [returnAssignment]="returnAssignment"
-        [allBorrowers]="borrowers"
-        [allPublications]="publications"
-    ></app-assignment-view>
+        [returnTicket]="returnTicket"
+    ></app-ticket-view>
 </div>

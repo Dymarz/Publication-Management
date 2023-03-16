@@ -28,24 +28,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PublicationsComponent } from './components/publications/publications.component';
-import { PublicationListComponent } from './components/publications/publication-list/publication-list.component';
-import { PublicationViewComponent } from './components/publications/publication-view/publication-view.component';
-import { BasedataComponent } from './components/basedata/basedata.component';
-import { BasedataKindsComponent } from './components/basedata/basedata-kinds/basedata-kinds.component';
-import { BasedataKeywordsComponent } from './components/basedata/basedata-keywords/basedata-keywords.component';
-import { BasedataBorrowersComponent } from './components/basedata/basedata-borrowers/basedata-borrowers.component';
-import { BasedataAuthorsComponent } from './components/basedata/basedata-authors/basedata-authors.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
 import { GermanDateAdapter } from './helpers/german-date-adapter';
-import { AssignmentsComponent } from './components/assignments/assignments.component';
-import { AssignmentListComponent } from './components/assignments/assignment-list/assignment-list.component';
-import { AssignmentViewComponent } from './components/assignments/assignment-view/assignment-view.component';
-import { OverdueNoticeComponent } from './components/overdue-notice/overdue-notice.component';
-import { OverdueNoticeListComponent } from './components/overdue-notice/overdue-notice-list/overdue-notice-list.component';
+import { TicketsComponent } from './components/tickets/tickets.component';
+import { TicketListComponent } from './components/tickets/ticket-list/ticket-list.component';
+import { TicketViewComponent } from './components/tickets/ticket-view/ticket-view.component';
+
 import { getGermanPaginatorIntl } from './helpers/german-paginator-intl';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
@@ -54,19 +45,9 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 @NgModule({
     declarations: [
         AppComponent,
-        PublicationsComponent,
-        PublicationListComponent,
-        PublicationViewComponent,
-        BasedataComponent,
-        BasedataKindsComponent,
-        BasedataKeywordsComponent,
-        BasedataBorrowersComponent,
-        BasedataAuthorsComponent,
-        AssignmentsComponent,
-        AssignmentListComponent,
-        AssignmentViewComponent,
-        OverdueNoticeComponent,
-        OverdueNoticeListComponent,
+        TicketsComponent,
+        TicketListComponent,
+        TicketViewComponent,
     ],
     imports: [
         BrowserAnimationsModule,

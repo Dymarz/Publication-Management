@@ -30,14 +30,14 @@ app-publication-view {
     justify-content: center;
 }
 
-app-assignments {
+app-tickets {
     width: 100%;
     height: 90%;
     display: flex;
     justify-content: center;
 }
 
-app-assignment-list {
+app-ticket-list {
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -45,7 +45,7 @@ app-assignment-list {
     justify-content: center;
 }
 
-app-assignment-view {
+app-ticket-view {
     width: 100%;
     height: 100%;
     overflow: auto;

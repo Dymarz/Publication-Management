@@ -1,0 +1,66 @@
+<!-- Author: Marcel Dymarz -->
+<div class="container">
+    <mat-form-field appearance="standard" class="filter">
+        <mat-label>Filter</mat-label>
+        <input
+            matInput
+            (keyup)="applyFilter($event)"
+            placeholder="Bsp. Mustermann"
+            #input
+        />
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="subject">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Subject</th>
+            <td mat-cell *matCellDef="let element">{{ element.subject }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Description/th>
+            <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="linkedTickets">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Linked Tickets</th>
+            <td mat-cell *matCellDef="let element">{{ element.linkedTickets }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdFrom">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Vorname</th>
+            <td mat-cell *matCellDef="let element">{{ element.author }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Created At
+            </th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.createdAt | date: "shortDate" }}
+            </td>
+        </ng-container>        
+
+        <tr
+            mat-header-row
+            *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr
+            mat-row
+            (click)="onShowTicket(row)"
+            (click)="selection.toggle(row)"
+            [ngClass]="{
+                hovered: row.hovered,
+                highlighted: selection.isSelected(row)
+            }"
+            (mouseover)="row.hovered = true"
+            (mouseout)="row.hovered = false"
+            *matRowDef="let row; columns: displayedColumns"
+        ></tr>
+    </table>
+
+    <mat-paginator
+        [pageSizeOptions]="[10, 25, 50, 100]"
+        showFirstLastButtons
+        class="mat-paginator-sticky"
+    >
+    </mat-paginator>
+</div>
