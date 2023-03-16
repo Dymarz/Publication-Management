@@ -14,7 +14,7 @@ export class TicketsComponent implements OnInit {
     onReturnSubject: Subject<Ticket> = new Subject<Ticket>();
     isViewOpen: boolean = false;
     currentRecord?: Ticket;
-    headerTitle: string = 'Ausleihvorgänge';
+    headerTitle: string = 'Ticket-Board';
     showHistory: boolean = false;
     onUpdateListSubject: Subject<Observable<Ticket[]>> = new Subject<Observable<Ticket[]>>();
 
@@ -29,18 +29,18 @@ export class TicketsComponent implements OnInit {
     ngOnInit(): void {}
 
     onBack(): void {
-        this.headerTitle = 'Ausleihvorgänge';
+        this.headerTitle = 'Ticket-Board';
         this.currentRecord = undefined;
         this.isViewOpen = false;
     }
 
     onEdit(): void {
-        this.headerTitle = 'Ausleihvorgang bearbeiten';
+        this.headerTitle = 'Ticket-Editing';
         this.isViewOpen = true;
     }
 
     onAdd(): void {
-        this.headerTitle = 'Ausleihvorgang hinzufügen';
+        this.headerTitle = 'Ticket-Creation';
         this.currentRecord = undefined;
         this.isViewOpen = true;
     }

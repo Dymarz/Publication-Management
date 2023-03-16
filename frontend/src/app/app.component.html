@@ -3,7 +3,7 @@
     <div>
         <img class="logo" src="/assets/naklogo.svg"/>
     </div>
-    <h1>Bibliotheksverwaltung</h1>
+    <h1>Minijira</h1>
     <div class="nak-logo-text">
         <img src="/assets/naklogoWithText.svg"/>
     </div>
@@ -12,24 +12,7 @@
 <mat-sidenav-container class="main-container" autosize>
     <mat-sidenav disableClose mode="side" opened>
         <div class="list">
-            <div>
-                <button
-                    mat-icon-button
-                    [routerLink]="'/overdue-notice'"
-                    routerLinkActive="active"
-                >
-                    <mat-icon>running_with_errors</mat-icon>
-                    <span *ngIf="!showMiniNav">Mahnwesen</span>
-                </button>
-
-                <button
-                    mat-icon-button
-                    [routerLink]="'/publications'"
-                    routerLinkActive="active"
-                >
-                    <mat-icon>menu_book</mat-icon>
-                    <span *ngIf="!showMiniNav">Publikationen</span>
-                </button>
+            <div>    
 
                 <button
                     mat-icon-button
@@ -37,17 +20,10 @@
                     routerLinkActive="active"
                 >
                     <mat-icon>ticket</mat-icon>
-                    <span *ngIf="!showMiniNav">Ausleihvorgänge</span>
+                    <span *ngIf="!showMiniNav">Tickets</span>
                 </button>
 
-                <button
-                    mat-icon-button
-                    [routerLink]="'/basedata'"
-                    routerLinkActive="active"
-                >
-                    <mat-icon>storage</mat-icon>
-                    <span *ngIf="!showMiniNav">Stammdaten</span>
-                </button>
+               
             </div>
             <div>
                 <button *ngIf="!showMiniNav" mat-icon-button (click)="showMiniNav = !showMiniNav">
@@ -68,5 +44,5 @@
 </mat-sidenav-container>
 
 <div class="footer">
-    Gruppe: Marcel Dymarz, Thorge Früchtenicht, Kevin Jahrens und Nello Musmeci
+    Minijira - Codeproject just for fun and playing around with some technologies
 </div>

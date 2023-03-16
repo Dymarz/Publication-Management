@@ -2,9 +2,6 @@
 <div class="page">
     <div class="header-div">
         <h1> {{ headerTitle }}</h1>
-        <mat-slide-toggle *ngIf="!isViewOpen" (change)="changeShowHistory()" color="accent" [checked]="showHistory">
-            Historie
-        </mat-slide-toggle>
     </div>
 
     <app-ticket-list
